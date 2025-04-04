@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Home Page – Spotify Clone
 
-## Getting Started
+This file represents the **HomePage** component of a Spotify clone application. It is rendered at the `/home` route and allows users to view different types of Spotify data such as:
 
-First, run the development server:
+- **New Releases**
+- **Featured Playlist**
+- **Browse Genres**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📂 File Path
+`/app/home/page.tsx`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧠 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Fetches a Spotify access token on component mount.
+- Displays different data views based on user selection.
+- Implements a responsive layout with a mobile-friendly menu.
+- Automatically loads "New Releases" as the default view.
+- Highlights active views in the menu.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚧 Known Issues
 
-## Learn More
+### ❌ Featured Playlist Not Working
 
-To learn more about Next.js, take a look at the following resources:
+The **"Featured Playlist"** view is currently non-functional. Possible reasons include:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- The API route used in `getFeaturedPlaylists()` might be deprecated or incorrect.
+- Spotify API access might require different scopes or an updated token.
+- Network or permission errors are preventing proper data retrieval.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🔍 Recommendations
 
-## Deploy on Vercel
+- Check the implementation of the `getFeaturedPlaylists()` function in `services/http.services.ts`.
+- Refer to the latest [Spotify Web API documentation](https://developer.spotify.com/documentation/web-api/) for the correct endpoint.
+- Use Postman or browser dev tools to test the endpoint manually.
+- Ensure the token has sufficient scopes to access featured playlists.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📍 Route
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The component is available at:
+
+
+
+## 🗂 Related Files
+
+- `services/http.services.ts` – for Spotify API utility methods
+- `styles.scss` – for component styling
+- `HomePage.tsx` – this component file
